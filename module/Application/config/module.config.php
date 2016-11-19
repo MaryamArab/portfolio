@@ -24,6 +24,16 @@ return [
                     ],
                 ],
             ],
+            'download' => [
+                'type'    => Segment::class,
+                'options' => [
+                    'route'    => '/download[/:action]',
+                    'defaults' => [
+                        'controller'    => Controller\DownloadController::class,
+                        'action'        => 'index',
+                    ],
+                ],
+            ],
             'application' => [
                 'type'    => Segment::class,
                 'options' => [
@@ -39,6 +49,7 @@ return [
     'controllers' => [
         'factories' => [
             Controller\IndexController::class => InvokableFactory::class,
+            Controller\DownloadController::class => InvokableFactory::class,
         ],
     ],
     'view_manager' => [
